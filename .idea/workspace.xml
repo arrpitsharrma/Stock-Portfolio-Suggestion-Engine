@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1UowYVoj8hufO9trJZak3Zy1VKV" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -74,7 +77,7 @@
       <updated>1576036303660</updated>
       <workItem from="1576036304791" duration="6181000" />
       <workItem from="1576401435292" duration="281000" />
-      <workItem from="1576446864305" duration="15041000" />
+      <workItem from="1576446864305" duration="15359000" />
     </task>
     <servers />
   </component>
