@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type = "text/javascript">
+  function select_Max_Two_Stratergies(element) {
+    var count_check_box = 0;
+    var stratergy = document.getElementsByName("strategies");
+    for (var i = 0; i < stratergy.length; i++) {
+      if (stratergy[i].checked) {
+        count_check_box = count_check_box + 1
+      }
+    }
+    console.log(count_check_box);
+    if (count_check_box > 2)
+    {
+      alert('Atmost two stratergies can be selected!');
+      element.checked = false;
+    }
+  }
+  function click_Submit_Button(element) {
+    var count_check_box = 0;
+    var stratergy = document.getElementsByName("strategies");
+    for (var i = 0; i < stratergy.length; i++) {
+      if (stratergy[i].checked) {
+        count_check_box = count_check_box + 1
+      }
+    }
+    if (count_check_box < 1)
+    {
+      alert('Select atleast one stratergy!');
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function checkAmount(){
+    if(document.getElementById('amount').value<5000){
+alert('Amount should be greater than or equal to 5000');
+return false;
+}
+  }
+</script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <div align = "center" style ="background-image: linear-gradient(to right, #f697ef, #00fff4);">
+  <br>
+   <h1 STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; color: #ffffff">Stock Portfolio Suggestion Engine</h1>
+<br>
+    <div class="card" style="width: 30rem;">
+  <div class="card-body">
+  <form action="/getData" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Enter Amount (in dollars)</label>
+    <input type="text" name="amount" onblur="checkAmount(this)" class="form-control" id="amount"  placeholder="$">
+  </div>
+  <div class="form-group">
+    <label for="strategy" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Choose Investment Strategies (upto two)</label>
+
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="ethicalInvesting" onclick="select_Max_Two_Stratergies(this)" name="strategies" value="Ethical Investing">
+    <label class="form-check-label" for="ethicalInvesting" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Ethical Investing</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="growthInvesting" onclick="select_Max_Two_Stratergies(this)" name="strategies" value="Growth Investing">
+    <label class="form-check-label" for="growthInvesting" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Growth Investing</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="indexInvesting" onclick="select_Max_Two_Stratergies(this)" name="strategies" value="Index Investing">
+    <label class="form-check-label" for="growthInvesting" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Index Investing</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="qualityInvesting" onclick="select_Max_Two_Stratergies(this)" name="strategies" value="Quality Investing">
+    <label class="form-check-label" for="growthInvesting" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Quality Investing</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="valueInvesting" onclick="select_Max_Two_Stratergies(this)" name="strategies" value="value Investing">
+    <label class="form-check-label" for="growthInvesting" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Value Investing</label>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+      <label class="form-check-label" for="alert" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; color: red">(Please wait for 1 min to accommodate API delays)</label>
+
+</form>
+
+  </div>
+</div>
+
+
+</div>
+<br><br>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

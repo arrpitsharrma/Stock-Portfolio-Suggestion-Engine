@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script>
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "{{companyName1}}"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{
+		type: "line",
+		dataPoints: [
+            {x: new Date({{ newGraph.c1d1d }}), y:{{newGraph.c1d1p}}},
+			{ x: new Date({{newGraph.c1d2d}}),y: {{newGraph.c1d2p}}},
+			{ x: new Date({{newGraph.c1d3d}}),y: {{newGraph.c1d3p}}},
+			{ x: new Date({{ newGraph.c1d3d }}),y: {{newGraph.c1d4p}}},
+			{ x: new Date({{newGraph.c1d5d}}),y: {{newGraph.c1d5p}}},
+
+		]
+	}]
+});
+chart.render();
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "{{companyName2}}"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{
+		type: "line",
+		dataPoints: [
+            {x: new Date({{newGraph.c2d1d }}), y:{{newGraph.c2d1p}}},
+			{ x: new Date({{newGraph.c2d2d}}),y: {{newGraph.c2d2p}}},
+			{ x: new Date({{newGraph.c2d3d}}),y: {{newGraph.c2d3p}}},
+			{ x: new Date({{newGraph.c2d3d }}),y: {{newGraph.c2d4p}}},
+			{ x: new Date({{newGraph.c2d5d}}),y: {{newGraph.c2d5p}}},
+
+		]
+	}]
+});
+chart2.render();
+
+var chart3 = new CanvasJS.Chart("chartContainer3", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "{{companyName3}}"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{
+		type: "line",
+		dataPoints: [
+            {x: new Date({{newGraph.c3d1d }}), y:{{newGraph.c3d1p}}},
+			{ x: new Date({{newGraph.c3d2d}}),y: {{newGraph.c3d2p}}},
+			{ x: new Date({{newGraph.c3d3d}}),y: {{newGraph.c3d3p}}},
+			{ x: new Date({{newGraph.c3d3d }}),y: {{newGraph.c3d4p}}},
+			{ x: new Date({{newGraph.c3d5d}}),y: {{newGraph.c3d5p}}},
+
+		]
+	}]
+});
+chart3.render();
+
+}
+</script>
+
+  </head>
+  <body>
+  <div align = "center" style ="background-image: linear-gradient(to right, #f697ef, #00fff4);">
+    <br>
+    <h1 STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; color: #ffffff">Suggested Stocks</h1>
+    <br>
+    <div class="card" style="width: 62rem;">
+ 	 	<div class="card-body">
+           <label for="strategy" STYLE="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">{{strategy1}}</label>
+  			<div class="row">
+
+              <div class="col-sm-4">
+                <div class="card" >
+                  <div class="card-body" align ="left">
+                   <h5 class="card-title">{{companyName1}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{companySymbol1}}</h6><br>
+                    <p class="card-text">Price: $ {{stockPrice1}}</p>
+                    <p class="card-text">Amount Invested: $ {{suggestionAmount1}}</p>
+                    <p class="card-text">Date: {{dateCompany1}}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card" >
+                  <div class="card-body" align ="left">
+                   <h5 class="card-title">{{companyName2}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{companySymbol2}}</h6><br>
+                    <p class="card-text">Price: $ {{stockPrice2}}</p>
+                    <p class="card-text">Amount Invested: $ {{suggestionAmount2}}</p>
+                    <p class="card-text">Date: {{dateCompany2}}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card" >
+                  <div class="card-body" align ="left">
+                   <h5 class="card-title">{{companyName3}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{companySymbol3}}</h6><br>
+                    <p class="card-text">Price: $ {{stockPrice3}}</p>
+                    <p class="card-text">Amount Invested: $ {{suggestionAmount3}}</p>
+                    <p class="card-text">Date: {{dateCompany3}}</p>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+  		</div>
+	</div>
+    <br>
+    <div class="card" style="width: 62rem;">
+ 	 	<div class="card-body">
+          Stock Trends
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card" >
+                  <div class="card-body" align ="center">
+                    <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-sm-4">
+                <div class="card" >
+                  <div class="card-body" align ="center">
+                    <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="col-sm-4">
+                <div class="card" >
+                  <div class="card-body" align ="center">
+                    <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                   </div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+      <br>
+    <br><br>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
